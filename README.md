@@ -5,7 +5,7 @@
 + [Classes Variables Methods](#Classes-Variables-Methods) ![icon][done]
 + [String](#String) ![icon][done]
 + [Immutability](#Immutability) ![icon][done]
-+ [OOP](#OOP) ![icon][done]
++ [OOP](#ООП) ![icon][done]
 + [Interface and AbstractClasses](#Interface-and-AbstractClasses) ![icon][done]
 + [Override VS Overload](#Override-VS-Overload) ![icon][done]
 + [Collections](#Collections) ![icon][done]
