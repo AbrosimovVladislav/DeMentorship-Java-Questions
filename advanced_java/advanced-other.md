@@ -133,3 +133,62 @@ public class Person implements java.io.Serializable,
 
 + поместить в оберточный класс `javax.crypto.SealedObject` и/или `java.security.SignedObject`. Данные классы являются сериализуемыми, поэтому при оборачивании объекта в `SealedObject` создается подобие «подарочной упаковки» вокруг исходного объекта. Для шифрования необходимо создать симметричный ключ, управление которым должно осуществляться отдельно. Аналогично, для проверки данных можно использовать класс `SignedObject`, для работы с которым также нужен симметричный ключ, управляемый отдельно.
 
+## Что такое `LocalDateTime`?
+`LocalDateTime` объединяет вместе `LocaleDate` и `LocalTime`, содержит дату и время в календарной системе ISO-8601 без привязки к часовому поясу. Время хранится с точностью до наносекунды. Содержит множество удобных методов, таких как plusMinutes, plusHours, isAfter, toSecondOfDay и т.д.
+
+## Что такое `ZonedDateTime`?
+`java.time.ZonedDateTime` — аналог `java.util.Calendar`, класс с самым полным объемом информации о временном контексте в календарной системе ISO-8601. Включает временную зону, поэтому все операции с временными сдвигами этот класс проводит с её учётом.
+
+## Как получить текущую дату с использованием Date Time API из Java 8?
+```java
+LocalDate.now();
+```
+
+## Как добавить 1 неделю, 1 месяц, 1 год, 10 лет к текущей дате с использованием Date Time API?
+```java
+LocalDate.now().plusWeeks(1);
+LocalDate.now().plusMonths(1);
+LocalDate.now().plusYears(1);
+LocalDate.now().plus(1, ChronoUnit.DECADES);
+```
+
+## Как получить следующий вторник используя Date Time API?
+```java
+LocalDate.now().with(TemporalAdjusters.next(DayOfWeek.TUESDAY));
+```
+
+## Как получить вторую субботу текущего месяца используя Date Time API?
+```java
+LocalDate
+    .of(LocalDate.now().getYear(), LocalDate.now().getMonth(), 1)
+    .with(TemporalAdjusters.nextOrSame(DayOfWeek.SATURDAY))
+    .with(TemporalAdjusters.next(DayOfWeek.SATURDAY));
+```
+
+## Как получить текущее время с точностью до миллисекунд используя Date Time API?
+```java
+new Date().toInstant();
+```
+
+## Как получить текущее время по местному времени с точностью до миллисекунд используя Date Time API?
+```java
+LocalDateTime.ofInstant(new Date().toInstant(), ZoneId.systemDefault());
+```
+
+## Какой класс появился в Java 8 для кодирования/декодирования данных?
+`Base64` - потокобезопасный класс, который реализует кодировщик и декодировщик данных, используя схему кодирования base64 согласно _RFC 4648_ и _RFC 2045_.
+
+Base64 содержит 6 основных методов:
+
+`getEncoder()`/`getDecoder()` - возвращает кодировщик/декодировщик base64, соответствующий стандарту _RFC 4648_;
+`getUrlEncoder()`/`getUrlDecoder()` - возвращает URL-safe кодировщик/декодировщик base64, соответствующий стандарту _RFC 4648_;
+`getMimeEncoder()`/`getMimeDecoder()` - возвращает MIME кодировщик/декодировщик, соответствующий стандарту _RFC 2045_.
+
+## Как создать Base64 кодировщик и декодировщик?
+```java
+// Encode
+String b64 = Base64.getEncoder().encodeToString("input".getBytes("utf-8")); //aW5wdXQ==
+// Decode
+new String(Base64.getDecoder().decode("aW5wdXQ=="), "utf-8"); //input
+```
+

@@ -68,3 +68,14 @@ class Test {
 
 Класс `StringBuilder` был добавлен в Java 5 и он во всем идентичен классу `StringBuffer` за исключением того, что он не синхронизирован и поэтому его методы выполняются значительно быстрей.
 
+## Что такое `StringJoiner`?
+Класс `StringJoiner` используется, чтобы создать последовательность строк, разделенных разделителем с возможностью присоединить к полученной строке префикс и суффикс:
+
+```java
+StringJoiner joiner = new StringJoiner(".", "prefix-", "-suffix");
+for (String s : "Hello the brave world".split(" ")) {
+    joiner.add(s);
+}
+System.out.println(joiner); //prefix-Hello.the.brave.world-suffix
+```
+
