@@ -1,6 +1,6 @@
 [На главную](../README.md)
 
-# JRE JVM JDK
+# JRE, JVM, JDK
 + [Чем различаются JRE, JVM и JDK?](#Чем различаются-JRE,-JVM-и-JDK)
 
 ## Чем различаются JRE, JVM и JDK?

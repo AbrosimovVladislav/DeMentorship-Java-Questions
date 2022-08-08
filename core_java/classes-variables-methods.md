@@ -1,6 +1,6 @@
 [На главную](../README.md)
 
-# JRE JVM JDK
+# Classes, Method, Variables
 + [Что такое _ООП_?](#Что-такое-ООП)
 
 ## Что такое _ООП_?
