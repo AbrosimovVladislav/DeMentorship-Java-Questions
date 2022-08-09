@@ -2,6 +2,8 @@
 
 # Collections
 
+- Когда ArrayList расширяется?
+
 + [Что такое _«коллекция»_?](#Что-такое-коллекция)
 + [Назовите основные интерфейсы JCF и их реализации.](#Назовите-основные-интерфейсы-jcf-и-их-реализации)
 + [Расположите в виде иерархии следующие интерфейсы: `List`, `Set`, `Map`, `SortedSet`, `SortedMap`, `Collection`, `Iterable`, `Iterator`, `NavigableSet`, `NavigableMap`.](#Расположите-в-виде-иерархии-следующие-интерфейсы-list-set-map-sortedset-sortedmap-collection-iterable-iterator-navigableset-navigablemap)
